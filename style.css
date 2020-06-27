@@ -9,29 +9,114 @@
 body {
   background: #ffffff; 
   font-family: 'Montserrat', sans-serif; 
-  margin: auto 10px; 
+  color: #2d3945; 
+  margin: 0; 
 }
 
-form {
-  margin: 10px auto; 
-  border-radius: 8px;
+ 
+/* -- Text Styles -- */ 
+
+h1 {
+  font-size: 0.8em; 
 }
 
-fieldset {
-  border: none; 
-  margin-bottom: 30px;
+h2,
+legend {
+  font-family: 'Merriweather', serif;
+}
+
+h2 {
+  font-size: 1.3em; 
+  text-align: center; 
+  color: #fff; 
+  margin-top: 0;
+  margin-bottom: 10px; 
+}
+
+p {
+  text-align: center; 
+  margin: 0; 
 }
 
 label {
-  display: block; 
-  margin-bottom: 5px;
+  font-size: 0.9em; 
+  color: #2d3945; 
 }
 
 legend {
   margin-bottom: 20px;
   padding-left: 0; 
+  padding-top: 15px; 
   font-size: 1.2em; 
+  color: #2d3945; 
 }
+
+.strong {
+  font-weight: 600; 
+}
+
+/* -- Header -- */
+
+header {
+  margin: 0 auto;
+  width: 100%;  
+  padding: 15px; 
+  text-align: center; 
+  background-color: #2d3945;
+}
+
+.banner {
+  color: #fff; 
+  text-transform: uppercase;
+  letter-spacing: 1px; 
+  font-size: 1.2em;   
+}
+
+.intro-bg {
+  background-color: #4ebbb5;
+}
+
+.intro {
+  margin: 0 auto; 
+  width: 90%; 
+  padding: 25px 20px 40px; 
+  border-bottom: 2px solid #2d3945;
+}
+
+/* -- Contact Form -- */ 
+
+.wrapper {
+  margin: auto; 
+  width: 100%; 
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+fieldset {
+  border: none; 
+  width: 95%; 
+  margin: 0; 
+  padding: 0 15px; 
+}
+
+.flex {
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
 
 input[type="text"],
 input[type="email"],
@@ -39,27 +124,144 @@ input[type="tel"],
 textarea, 
 select {
   border: none; 
-  background-color: #e8eeef;
+  background-color: #eff0f1;
   border-radius: 3px; 
   padding: 15px; 
   width: 100%; 
+  margin-top: 10px; 
   margin-bottom: 20px;
 }
 
-input:required {
-  text-align: left; 
+input[placeholder="Required"]::placeholder {
+  color:#868686; 
+  text-align: right; 
+  font-style: italic; 
+  font-size: 0.9em;
+  padding-right: 10px; 
+}
+
+input:not([placeholder="Required"])::placeholder {
+  font-size: 0.9em; 
+}
+
+input#zip {
+  width: 50%; 
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none; 
+  color: #fff; 
+  border: 1px solid #2d3945; 
+  background-color: #4ebbb5;
+  transition: .5s; 
 }
 
 
+/* -- Newsletter -- */ 
 
+.news-bg {
+  margin: auto; 
+  width: 100%; 
+  padding: 15px 0; 
+  background-color: #dfdfdf;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+  color: #fff; 
+}
+
+.options {
+  margin: 10px 0; 
+}
+
+input[id="java_news"],
+label[for="topics"] {
+  margin-bottom: 20px; 
+}
+
+.other {
+  margin-top: 20px; 
+}
+
+textarea {
+  height: 140px; 
+  font-family: 'Montserrat', sans-serif; 
+}
+
+
+/* -- Contact Form -- */ 
+
+button {
+  background-color: #4ebbb5;
+  color: #fff;
+  padding: 20px; 
+  border-radius: 3px;
+  border: none;  
+  width: 100%;  
+  font-family: 'Montserrat', sans-serif; 
+  text-transform: uppercase;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  font-weight: 600; 
+}
+
+.button {
+  margin: 30px 15px;
+}
+
+/* -- Footer -- */ 
+
+footer {
+  width: 90%; 
+  text-align: center; 
+  margin: 10px auto;
+  font-size: 0.8em; 
+  color: #2d3945; 
+  border-top: 2px solid #2d3945;
+  text-align: center;  
+  padding: 20px;
+}
 
 
 /* ================================= 
   Media Queries
 ==================================== */
 
-@media (min-width: 760px) {
+@media (min-width: 768px) {
 
-   
+  .intro, 
+  .wrapper,
+  footer {
+    margin: auto;
+    width: 50%;
+  }
+ 
+  .contact {
+    flex-direction: row; 
+    justify-content: flex-start;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    flex-grow: 1;
+    flex-basis: 75%;
+}
+ 
+  .contact label {
+    flex-basis: 25%;
+    height:50px;
+    margin: auto 0;
+  }
+
+  input#zip {
+    max-width: 25%; 
+  }
+
 }
 
